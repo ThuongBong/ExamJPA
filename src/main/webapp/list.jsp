@@ -1,13 +1,6 @@
 <%@ page import="java.util.List" %>
 <%@ page import="com.example.examjpa.entity.EmployeeEntity" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: ASUS
-  Date: 25/05/2023
-  Time: 8:49 CH
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <html>
@@ -18,7 +11,6 @@
 </head>
 <body>
 
-<%--message--%>
 <p style="color: green">${message}</p>
 
   <a href="employee/employee.jsp" class="btn btn-primary">Create Employee</a>
@@ -27,7 +19,7 @@
 <table class="table" style="width: 80%; margin: 0 auto">
   <thead>
   <tr>
-    <th scope="col">#</th>
+    <th scope="col">STT</th>
     <th scope="col">Name</th>
     <th scope="col">Birthday</th>
     <th scope="col">Address</th>
