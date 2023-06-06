@@ -13,7 +13,7 @@
 
 <p style="color: green">${message}</p>
 
-  <a href="employee/employee.jsp" class="btn btn-primary">Create Employee</a>
+  <a href="employee.jsp" class="btn btn-primary">Create Employee</a>
 
 
 <table class="table" style="width: 80%; margin: 0 auto">
