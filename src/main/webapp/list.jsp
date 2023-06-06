@@ -10,36 +10,34 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </head>
 <body>
-
-<p style="color: green">${message}</p>
 <h1 style="text-align: center">List Employee</h1>
-  <a href="employee.jsp" class="btn btn-primary">Create Employee</a>
+<a href="employee.jsp" class="btn btn-success">Create Employee</a>
 
-
-<table class="table" style="width: 80%; margin: 0 auto">
-  <thead>
-  <tr>
-    <th scope="col">STT</th>
-    <th scope="col">Name</th>
-    <th scope="col">Birthday</th>
-    <th scope="col">Address</th>
-    <th scope="col">Position</th>
-    <th scope="col">Department</th>
-  </tr>
-  </thead>
-  <tbody>
-      <c:forEach items="${listEmployee}" var="employee" varStatus="loop">
-        <tr>
-          <th scope="row">${loop.index + 1}</th>
-          <td>${employee.fullName}</td>
-          <td>${employee.birthday}</td>
-          <td>${employee.address}</td>
-          <td>${employee.position}</td>
-          <td>${employee.department}</td>
-        </tr>
-      </c:forEach>
-
-  </tbody>
-</table>
+<div class="table-responsive">
+  <table class="table">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">STT</th>
+      <th scope="col">Name</th>
+      <th scope="col">Birthday</th>
+      <th scope="col">Address</th>
+      <th scope="col">Position</th>
+      <th scope="col">Department</th>
+    </tr>
+    </thead>
+    <tbody class="tbody-light">
+    <c:forEach items="${listEmployee}" var="employee" varStatus="loop">
+      <tr>
+        <th scope="row">${loop.index + 1}</th>
+        <td>${employee.fullName}</td>
+        <td>${employee.birthday}</td>
+        <td>${employee.address}</td>
+        <td>${employee.position}</td>
+        <td>${employee.department}</td>
+      </tr>
+    </c:forEach>
+    </tbody>
+  </table>
+</div>
 </body>
 </html>
