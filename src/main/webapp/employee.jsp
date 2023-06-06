@@ -13,23 +13,23 @@
     </div>
     <div class="col-12">
         <label for="fullName" class="form-label">Full Name:</label>
-        <input class="form-control" type="text" id="fullName" name="fullName"">
+        <input class="form-control" type="text" id="fullName" name="fullName" required>
     </div>
     <div class="col-12">
         <label for="birthday" class="form-label">Birthday:</label>
-        <input type="date" id="birthday" name="birthday" class="form-control">
+        <input type="date" id="birthday" name="birthday" class="form-control" required>
     </div>
     <div class="col-12">
         <label for="address" class="form-label">Address:</label>
-        <input type="text" id="address" name="address" class="form-control">
+        <input type="text" id="address" name="address" class="form-control" required>
     </div>
     <div class="col-12">
         <label for="position" class="form-label">Position:</label>
-        <input type="text" id="position" name="position" class="form-control">
+        <input type="text" id="position" name="position" class="form-control" required>
     </div>
     <div class="col-12">
         <label for="department" class="form-label">Department:</label>
-        <input type="text" id="department" name="department" class="form-control">
+        <input type="text" id="department" name="department" class="form-control" required>
     </div>
     <div class="col-12">
         <button type="submit" class="btn btn-primary" style="float: left">Submit</button>
