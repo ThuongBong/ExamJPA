@@ -12,7 +12,7 @@
 <body>
 
 <p style="color: green">${message}</p>
-
+<h1 style="text-align: center">List Employee</h1>
   <a href="employee.jsp" class="btn btn-primary">Create Employee</a>
 
 
