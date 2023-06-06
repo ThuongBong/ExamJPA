@@ -1,29 +1,25 @@
 package com.example.examjpa.entity;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Date;
 
+@Entity
 @Table(name = "employee")
-public class Employee implements Serializable {
+public class EmployeeEntity implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     private String fullName;
     private Date birthday;
     private String address;
     private String position;
     private String department;
-    // getters and setters
 
-
-    public Employee() {
+    public EmployeeEntity() {
     }
 
-    public Employee(String fullName, Date birthday, String address, String position, String department) {
+    public EmployeeEntity(String fullName, Date birthday, String address, String position, String department) {
         this.fullName = fullName;
         this.birthday = birthday;
         this.address = address;
@@ -31,11 +27,11 @@ public class Employee implements Serializable {
         this.department = department;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

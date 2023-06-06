@@ -1,13 +1,11 @@
 package com.example.examjpa.dao;
 
-import com.example.examjpa.entity.Employee;
+import com.example.examjpa.entity.EmployeeEntity;
 import com.example.examjpa.util.PersistenceUtil;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
-import javax.persistence.Query;
 import javax.persistence.TypedQuery;
-import java.sql.Connection;
 import java.util.List;
 
 public class EmployeeDAO {
@@ -18,10 +16,10 @@ public class EmployeeDAO {
         tran = em.getTransaction();
     }
 
-    public void insertEmployee(Employee employee) {
+    public void insertEmployee(EmployeeEntity employeeEntity) {
         try {
             tran.begin();
-            em.persist(employee);
+            em.persist(employeeEntity);
             tran.commit();
 
         }catch (Exception e){
@@ -30,10 +28,10 @@ public class EmployeeDAO {
         }
     }
 
-    public Employee getEmployeeById(int id) {
+    public EmployeeEntity getEmployeeById(int id) {
         try {
             em.getTransaction().begin();
-            Employee user = em.find(Employee.class, id);
+            EmployeeEntity user = em.find(EmployeeEntity.class, id);
             em.getTransaction().commit();
             return user;
         } catch (Exception e) {
@@ -44,9 +42,9 @@ public class EmployeeDAO {
         }
     }
 
-    public List<Employee> getAllEmployees() {
-        TypedQuery<Employee> query = em.createQuery("SELECT u FROM Employee u", Employee.class);
-        List<Employee> resultList = query.getResultList();
+    public List<EmployeeEntity> getAllEmployees() {
+        TypedQuery<EmployeeEntity> query = em.createQuery("SELECT e FROM EmployeeEntity e", EmployeeEntity.class);
+        List<EmployeeEntity> resultList = query.getResultList();
         return resultList;
     }
 

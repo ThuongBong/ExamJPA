@@ -1,23 +1,34 @@
-<%@ page import="com.example.examjpa.entity.Employee" %>
 <%@ page import="java.util.List" %>
-<%@ page import="com.example.examjpa.dao.EmployeeDAO" %>
+<%@ page import="com.example.examjpa.entity.EmployeeEntity" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: ASUS
+  Date: 25/05/2023
+  Time: 8:49 CH
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
-  <title>List User</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <title>List Employee</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </head>
 <body>
-<h1>Danh sách người dùng:</h1>
-<br>
-<h3><a href="/createOrUpdate">create</a></h3>
 
-<table class="table">
+<%--message--%>
+<p style="color: green">${message}</p>
+
+  <a href="employee/employee.jsp" class="btn btn-primary">Create Employee</a>
+
+
+<table class="table" style="width: 80%; margin: 0 auto">
   <thead>
   <tr>
-    <th scope="col">STT</th>
-    <th scope="col">Full Name</th>
+    <th scope="col">#</th>
+    <th scope="col">Name</th>
     <th scope="col">Birthday</th>
     <th scope="col">Address</th>
     <th scope="col">Position</th>
@@ -25,26 +36,17 @@
   </tr>
   </thead>
   <tbody>
-  <%--<c:choose>
-      <c:when test="${listUser.size() > 0}">
+      <c:forEach items="${listEmployee}" var="employee" varStatus="loop">
+        <tr>
+          <th scope="row">${loop.index + 1}</th>
+          <td>${employee.fullName}</td>
+          <td>${employee.birthday}</td>
+          <td>${employee.address}</td>
+          <td>${employee.position}</td>
+          <td>${employee.department}</td>
+        </tr>
+      </c:forEach>
 
-      </c:when>
-      <c:otherwise>
-          <td colspan="md-4">chưa có user nào trong hệ thống</td>
-      </c:otherwise>
-  </c:choose>--%>
-
-
-  <c:forEach items="${listUser}" var="employee" varStatus="loop">
-    <tr>
-      <th scope="row">${loop.index + 1}</th>
-      <td>${employee.fullName}</td>
-      <td><c:out value="${employee.birthday}"/></td>
-      <td>${employee.address}</td>
-      <td>${employee.position}</td>
-      <td>${employee.department}</td>
-    </tr>
-  </c:forEach>
   </tbody>
 </table>
 </body>
